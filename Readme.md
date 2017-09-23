@@ -111,7 +111,7 @@ gs \
 In short it generates a long command for ghostscript by getting the dimension of every jpg-file in the current directory and adding a pdf-page to the resulting targetpdf containing that single jpg in the  order 'ls -1 *.jpg' provides the filenames. That's why i renamed them initialy.
 
 ### drawbacks
-This way the first 3 pages are missing. But i don't mind. I can download them with my browser befor i start the conversion to pdf. I only tried one comic to download. I don't know if this working for other documents as well. No i will not setup a service to download comic from scribd for you. 
+This way the first 3 pages are missing. But i don't mind. I can download them with my browser befor i start the conversion to pdf. I only tried one comic to download. I don't know if this working for other documents as well. No, I will not setup a service to download comic from scribd for you. This is not a general solution to similar problems. 
 
 
 
