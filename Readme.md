@@ -66,7 +66,7 @@ page400-5f571f8db5.jpg
 I rename the images to have them in a nice nicer format.
 
 ```bash
-# all pages shall start with 'page-'
+# all pages shall start with 'page'
 renmae '' page *.jpg
 # rename all pageX-garbage.jpg to page0X-garbage.jpg
 rename page page0 page?-*.jpg
