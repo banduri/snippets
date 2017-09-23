@@ -25,7 +25,7 @@ now we need to download all those jsonp-files. Extract them and get the links to
 
 ```bash
 
-htmlfile='/tmp/1995 Garth Ennis - Preacher Volume 1.pdf.htm'
+export htmlfile='/tmp/1995 Garth Ennis - Preacher Volume 1.pdf.htm'
 
 for i in $(cut -d '"' -f2 ${htmlfile} | grep -i jsonp);do
   curl ${i} --output - | gunzip -f -d -c >> images.json
@@ -65,7 +65,7 @@ page400-5f571f8db5.jpg
 
 I rename the images to have them in a nice nicer format.
 
-```
+```bash
 # all pages shall start with 'page-'
 renmae '' page *.jpg
 # rename all pageX-garbage.jpg to page0X-garbage.jpg
