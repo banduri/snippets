@@ -9,8 +9,8 @@ To extract the jsonfiles i did.
 
 cut -d '"' -f2 '/tmp/1995 Garth Ennis - Preacher Volume 1.pdf.htm' | grep -i jsonp
 ```
-translated to human words this means cut every linke in the html-File at the delimiter " into fields but show me only field two. Show me (grep) all lines containing the word 'jsonp' (incasesensitive).
-This gives us lot's of links to the assetstore of scribd
+translated to human words this means to cut every line in the html-File at the delimiter `"` into fields but show me only field two. Show me (grep) all lines containing the word 'jsonp' (incasesensitive).
+This gives us lots of links to the assetstore of scribd
 
 ```
 https://html2-f.scribdassets.com/8r1f1u8irk4qsu8q/pages/4-53bf432e6e.jsonp
@@ -33,7 +33,7 @@ for i in $(cut -d '"' -f2 ${htmlfile} | grep -i jsonp);do
 done
 ```
 
-With a for-loop i use the `curl`-binary to download that jsonp. I tell `curl` to print the content to standard output, e.g. the terminal. I take that output and send it to gunzip to decompress it. I append the output of the decompressed data to the file images.json. So i get one big file containing all jsonp data. The echo at the end of the for-loop just adds a newline after every jsonp-content.
+With a for-loop i use the `curl`-binary to download that jsonp. I tell `curl` to print the content to standard output, e.g. the terminal. I take that output and send it to gunzip to decompress it. I append the output of the decompressed data to the file images.json. So i get one big file containing all jsonp data. The `echo` at the end of the for-loop just adds a newline after every jsonp-content.
 
 Now every line in images.json looks like this
 ```
@@ -45,7 +45,7 @@ I do the same trick again. Just cutting off everything but the links to the jpg-
 ```bash
 cut -d "=" -f 10  images.json  | cut -d '"' -f 2 | tr -d "\\"
 ```
-First use '=' as the delimiter and give me field 10. Then use '"' as a delimiter and give me field 2. Finaly remote all single backslashs (i need to quote the backslash with a backslash).
+First use `=` as the delimiter and give me field ten. Then use `"` as a delimiter and give me field two. Finaly remote all single backslashs (i need to quote the backslash with a backslash).
 
 this gives me a nice list of Images to download so lets get them all.
 
