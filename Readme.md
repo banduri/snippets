@@ -33,7 +33,7 @@ for i in $(cut -d '"' -f2 ${htmlfile} | grep -i jsonp);do
 done
 ```
 
-With a for-loop i use the curl-binary to download that jsonp. I tell curl to print the content to standard output, e.g. the terminal. I take that output and send it to gunzip to decompress it. I append the output of the decompressed data to the file images.json. So i get one big file containing all jsonp data. The echo at the end of the for-loop just adds a newline after every jsonp-content.
+With a for-loop i use the `curl`-binary to download that jsonp. I tell `curl` to print the content to standard output, e.g. the terminal. I take that output and send it to gunzip to decompress it. I append the output of the decompressed data to the file images.json. So i get one big file containing all jsonp data. The echo at the end of the for-loop just adds a newline after every jsonp-content.
 
 Now every line in images.json looks like this
 ```
